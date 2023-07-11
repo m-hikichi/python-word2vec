@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  dev:
+    build:
+      context: ../Dockerfile
+      dockerfile: Dockerfile
+    image: word2vec
+    container_name: word2vec
+    volumes:
+      - ../src:/app/src
+      - ../model:/app/model
+    working_dir: /app
+    tty: true
